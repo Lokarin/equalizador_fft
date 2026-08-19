@@ -1,43 +1,32 @@
-# Nome do projeto
+# Equalizador Analógico com Visualização de Espectro
 
-**(Adicionar abaixo UM parágrafo com visão geral do projeto.)**
+Este projeto consiste no desenvolvimento de um **equalizador de áudio analógico**, capaz de ajustar diferentes faixas de frequência de um sinal de áudio. O sistema também contará com uma visualização do espectro de frequências do sinal, permitindo observar de forma gráfica a distribuição das componentes do áudio. O desenvolvimento será dividido em quatro etapas:
 
-Esse projeto é um sistema de controle de motor de passo... O desenvolvimento foi divido em quatro etapas:
+* [Etapa 1](./etapa_1/README.md) (data da entrega): Pesquisa, planejamento e definição do projeto. [TODO]
+* [Etapa 2](./etapa_2/README.md) (data da entrega): Desenvolvimento e testes dos circuitos. [TODO]
+* [Etapa 3](./etapa_3/README.md) (data da entrega): Integração do equalizador com o sistema de visualização. [TODO]
+* [Etapa 4](./etapa_4/README.md) (data da entrega): Finalização, testes e análise do projeto. [TODO]
 
-- Etapa 1 (data da entrega): (breve descrição da etapa)
-- Etapa 2 (data da entrega): (breve descrição da etapa)
-- Etapa 3 (data da entrega): (breve descrição da etapa)
-- Etapa 4 (data da entrega): (breve descrição da etapa)
+## Requisitos [TODO]
 
-**(Exemplo com os links dos READMEs das etapas:)**
+Este projeto será desenvolvido utilizando os seguintes componentes e ferramentas:
 
-- [Etapa 1](./etapa_1/README.md) (02/04/2026): Pesquisa, planejamento e outline do projeto.
-- [Etapa 2](./etapa_2/README.md) (30/04/2026): Teste dos módulos e desenvolvimento de protótipo.
-- [Etapa 3](./etapa_3/README.md) (28/05/2026): Desenvolvimento do produto.
-- [Etapa 4](./etapa_4/README.md) (09/07/2026): Implementação e análise de desempenho.
+* Circuitos analógicos para processamento e equalização do sinal de áudio.
+* Amplificadores operacionais.
+* Microcontrolador STM32F411CEU6 para aquisição e processamento do sinal.
+* Display para visualização do espectro de frequências.
+* LTspice para simulação dos circuitos.
+* Ferramentas de desenvolvimento para o microcontrolador STM32.
 
+## Visão geral [TODO]
 
-## Requisitos
+**(Adicionar aqui o diagrama de blocos do sistema.)**
 
-**(Adicionar aqui os requisitos de hardware e software.)**
+O sistema recebe um sinal de áudio, realiza o processamento analógico para ajustar suas diferentes faixas de frequência e disponibiliza o sinal resultante para a saída de áudio. Paralelamente, o sinal é adquirido pelo microcontrolador, que realiza a análise de seu espectro de frequências e apresenta os resultados graficamente em um display.
 
-Este projeto foi implementado com os seguintes módulos/softwares/hardwares:
+## Protótipo [TODO]
 
-- Sensor de temperatura PT100 com 3 fios.
-- Sensor de corrente de efeito Hall LEM LA 205-S.
-- Espressif IoT Development Framework (esp idf).
-- Microcontrolador STM32F401.
+**(Adicionar aqui uma foto do protótipo.)**
 
-
-## Visão geral
-
-**(Adicionar aqui diagrama de blocos com UM parágrafo de explicação resumida de cada bloco (Ex.: 1 linha cada bloco).)**
-
-**A figura deve estar com um tamanho adequado para melhorar a apresentação da página inicial do projeto.**
-
-## Protótipo
-
-**(Adicionar aqui uma foto do protótipo com UM parágrafo de explicação.)**
-
-**A figura deve estar com um tamanho adequado para melhorar a apresentação da página inicial do projeto.**
+O protótipo consiste no circuito desenvolvido para realizar a equalização do sinal de áudio e no sistema responsável pela aquisição e visualização de seu espectro de frequências. Nesta etapa, serão apresentados os componentes e a montagem física utilizados para a implementação do projeto.
 
