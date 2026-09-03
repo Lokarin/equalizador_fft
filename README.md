@@ -20,7 +20,7 @@ Este projeto será desenvolvido utilizando os seguintes componentes e ferramenta
 
 ## Visão geral [TODO]
 
-**(Adicionar aqui o diagrama de blocos do sistema.)**
+<img src="img/diagrama_de_blocos_do_sistema_geral.jpeg" alt="diagrama_de_blocos_do_sistema_geral" width="600">
 
 O sistema recebe um sinal de áudio, realiza o processamento analógico para ajustar suas diferentes faixas de frequência e disponibiliza o sinal resultante para a saída de áudio. Paralelamente, o sinal é adquirido pelo microcontrolador, que realiza a análise de seu espectro de frequências e apresenta os resultados graficamente em um display.
 
