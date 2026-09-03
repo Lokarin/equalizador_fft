@@ -8,7 +8,7 @@ O projeto foi definido a partir da necessidade de desenvolver um sistema capaz d
 
 A arquitetura planejada para o projeto possui uma entrada de áudio, um estágio de condicionamento do sinal, os estágios responsáveis pela equalização das diferentes faixas de frequência e uma saída de áudio. Além desse caminho principal, parte do sinal será disponibilizada para o sistema digital responsável pela análise espectral. O microcontrolador realizará a aquisição do sinal e utilizará os dados obtidos para calcular seu espectro de frequências, que será apresentado em um display.
 
-Uma das primeiras decisões de projeto foi utilizar uma alimentação simples para o circuito. Como o sinal de áudio é originalmente alternado e o sistema utiliza alimentação positiva única, foi necessário considerar uma referência de tensão para permitir o processamento adequado do sinal pelos amplificadores operacionais. A referência escolhida para o planejamento inicial é aproximadamente metade da tensão de alimentação, permitindo deslocar o sinal para uma região adequada de operação. Ao final do caminho analógico, esse deslocamento poderá ser removido antes da saída de áudio.
+Visto que o microcontrolador aceita apenas tensões positivas nos seus pinos ADC uma das primeiras decisões de projeto foi utilizar uma alimentação simples para o circuito. Como o sinal de áudio é originalmente alternado e o sistema utiliza alimentação positiva única, foi necessário considerar uma referência de tensão para permitir o processamento adequado do sinal pelos amplificadores operacionais. A referência escolhida para o planejamento inicial é aproximadamente metade da tensão de alimentação, permitindo deslocar o sinal para uma região adequada de operação. Ao final do caminho analógico, esse deslocamento poderá ser removido antes da saída de áudio.
 
 Também foi definido que o sistema trabalhará com um sinal estéreo convertido para mono antes da etapa de equalização. Dessa forma, os canais esquerdo e direito poderão ser combinados e processados pelo mesmo conjunto de filtros, simplificando o circuito e reduzindo a quantidade de componentes necessária para o protótipo.
 
@@ -16,7 +16,7 @@ Durante a pesquisa de componentes, foram analisadas diferentes opções de ampli
 
 Para a parte digital, foi escolhida inicialmente a utilização do microcontrolador STM32F411CEU6. O microcontrolador possui conversor analógico-digital e capacidade de processamento suficiente para realizar a aquisição do sinal e os cálculos necessários para a análise espectral. A visualização deverá ser realizada por meio de um display conectado ao microcontrolador, permitindo apresentar ao usuário uma representação gráfica das componentes de frequência presentes no áudio.
 
-Também foi planejada a utilização do LTspice como ferramenta de apoio ao desenvolvimento. A simulação permite verificar o comportamento dos circuitos analógicos antes da montagem física, possibilitando analisar as respostas dos filtros e identificar problemas de funcionamento ainda durante a fase de desenvolvimento. Além de sinais de teste convencionais, pretende-se utilizar arquivos de áudio como entrada para avaliar o comportamento do circuito com sinais mais próximos da utilização final.
+Também foi planejada a utilização do LTspice/Proteus como ferramentas de apoio ao desenvolvimento. A simulação permite verificar o comportamento dos circuitos analógicos antes da montagem física, possibilitando analisar as respostas dos filtros e identificar problemas de funcionamento ainda durante a fase de desenvolvimento. Além de sinais de teste convencionais, pretende-se utilizar arquivos de áudio como entrada para avaliar o comportamento do circuito com sinais mais próximos da utilização final.
 
 ## Testes [TODO]
 
@@ -31,4 +31,3 @@ Os testes definitivos de desempenho, resposta dos filtros, funcionamento da aqui
 * [Analog Devices — Op Amp Applications Handbook](https://www.analog.com/en/resources/technical-books/op-amp-applications-handbook.html)
 * [LTspice — Analog Devices](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
 * [STMicroelectronics — STM32F411](https://www.st.com/en/microcontrollers-microprocessors/stm32f411/documentation.html)
-
