@@ -68,3 +68,9 @@ Inicialmente, foi definido que o equipamento deverá ser alimentado por uma **fo
 Entretanto, a definição da fonte de alimentação ainda é considerada preliminar. Conforme acordado com os professores, nesta etapa o foco principal será o desenvolvimento e a validação do restante do circuito. Por isso, os primeiros testes de bancada serão realizados utilizando uma **fonte de bancada**, permitindo maior facilidade para ajustar e monitorar as tensões utilizadas pelo circuito.
 
 A definição da solução definitiva de alimentação, incluindo tensão de operação, reguladores e possíveis requisitos específicos de cada estágio, será refinada conforme o circuito for implementado e testado.
+
+## Referências (links/datasheets/livros)
+
+* [ElectroAgenda — Homemade 3-Channel Audio Equalizer](https://electroagenda.com/en/homemade-3-channel-audio-equalizer/)
+* [Wikipedia — Linkwitz–Riley filter](https://en.wikipedia.org/wiki/Linkwitz%E2%80%93Riley_filter)
+* [Mixing Lessons — Shelving Filter](https://www.mixinglessons.com/shelving-filter/)
