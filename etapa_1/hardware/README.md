@@ -6,7 +6,10 @@ Inicialmente, foram realizadas simulações do circuito utilizando o **LTspice**
 
 Os resultados obtidos indicaram que o circuito é realizável dentro das restrições estabelecidas para o projeto. A simulação permitiu também avaliar a complexidade crescente do circuito conforme o número de filtros e componentes utilizados, servindo como base para as decisões de arquitetura adotadas nesta etapa.
 
-*IMAGENS (TODO).*
+<img src="1.png" alt="Circuito de referência de um equalizador de três bandas" width="600">
+
+*Figura 1 — Circuito de referência de um equalizador de três bandas.*
+
 
 ## Número de bandas
 
@@ -16,7 +19,10 @@ A utilização de quatro ou mais bandas aumentaria consideravelmente a quantidad
 
 Também foi definido que os filtros utilizados serão inicialmente de **primeira ordem**. Embora filtros de ordens superiores permitam obter respostas mais seletivas, sua utilização exigiria uma quantidade maior de amplificadores operacionais e componentes, aumentando a complexidade do hardware. Como o objetivo desta etapa é estabelecer um circuito funcional e viável, optou-se inicialmente pela solução de menor complexidade.
 
-*IMAGENS (TODO).*
+
+<img src="2.png" alt="Teste das regiões de frequência utilizando o LSP" width="600">
+
+*Figura 2 — Teste das regiões de frequência utilizando o equalizador digital do LSP.*
 
 ## Faixa de frequência
 
