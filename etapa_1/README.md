@@ -18,7 +18,7 @@ Para a parte digital, foi escolhida inicialmente a utilização do microcontrola
 
 Também foi planejada a utilização do LTspice/Proteus como ferramentas de apoio ao desenvolvimento. A simulação permite verificar o comportamento dos circuitos analógicos antes da montagem física, possibilitando analisar as respostas dos filtros e identificar problemas de funcionamento ainda durante a fase de desenvolvimento. Além de sinais de teste convencionais, pretende-se utilizar arquivos de áudio como entrada para avaliar o comportamento do circuito com sinais mais próximos da utilização final.
 
-## Testes [TODO]
+## Testes
 
 Nesta etapa, os testes tiveram caráter principalmente exploratório e de validação das alternativas consideradas para o projeto. Foram realizadas pesquisas e simulações preliminares com o objetivo de verificar a viabilidade do processamento analógico do áudio e do uso de uma referência de tensão para circuitos alimentados por fonte simples.
 
