@@ -2,7 +2,7 @@
 
 A primeira etapa do projeto foi dedicada à pesquisa, definição do problema e planejamento do desenvolvimento de um equalizador de áudio analógico com visualização do espectro de frequências. O objetivo inicial foi definir uma arquitetura que permitisse receber um sinal de áudio, realizar sua equalização por meio de circuitos analógicos e, paralelamente, analisar o sinal utilizando um microcontrolador. Também foram pesquisadas alternativas de implementação para os circuitos de áudio, para a aquisição do sinal e para a apresentação das informações ao usuário. Durante essa etapa, foram considerados os requisitos de alimentação, processamento do sinal, disponibilidade dos componentes e possibilidade de fabricação do protótipo no laboratório da instituição.
 
-## Desenvolvimento [TODO]
+## Desenvolvimento
 
 O projeto foi definido a partir da necessidade de desenvolver um sistema capaz de modificar a resposta em frequência de um sinal de áudio de forma analógica. Diferentemente de uma solução totalmente digital, na qual o áudio seria convertido e processado por software, a proposta utiliza circuitos analógicos para realizar a equalização. Essa abordagem permite estudar na prática o funcionamento de filtros, amplificadores operacionais e circuitos de condicionamento de sinais.
 
