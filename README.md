@@ -2,12 +2,12 @@
 
 Este projeto consiste no desenvolvimento de um **equalizador de áudio analógico**, capaz de ajustar diferentes faixas de frequência de um sinal de áudio. O sistema também contará com uma visualização do espectro de frequências do sinal, permitindo observar de forma gráfica a distribuição das componentes do áudio. O desenvolvimento será dividido em quatro etapas:
 
-* [Etapa 1](./etapa_1/README.md) (data da entrega): Pesquisa, planejamento e definição do projeto. [TODO]
-* [Etapa 2](./etapa_2/README.md) (data da entrega): Desenvolvimento e testes dos circuitos. [TODO]
+* [Etapa 1](./etapa_1/README.md) (10/09): Pesquisa, planejamento e definição do projeto. 
+* [Etapa 2](./etapa_2/README.md) (01/10): Desenvolvimento e testes dos circuitos. 
 * [Etapa 3](./etapa_3/README.md) (data da entrega): Integração do equalizador com o sistema de visualização. [TODO]
 * [Etapa 4](./etapa_4/README.md) (data da entrega): Finalização, testes e análise do projeto. [TODO]
 
-## Requisitos [TODO]
+## Requisitos
 
 Este projeto será desenvolvido utilizando os seguintes componentes e ferramentas:
 
@@ -18,7 +18,7 @@ Este projeto será desenvolvido utilizando os seguintes componentes e ferramenta
 * LTspice para simulação dos circuitos.
 * Ferramentas de desenvolvimento para o microcontrolador STM32.
 
-## Visão geral [TODO]
+## Visão geral 
 
 <img src="img/diagrama_de_blocos_do_sistema_geral.jpeg" alt="diagrama_de_blocos_do_sistema_geral" width="600">
 
