@@ -19,6 +19,6 @@ Descrição dos testes/validações realizadas. Use fotos, diagramas, tabelas, e
 ## Referências (links/datasheets/livros)
 
 
-- [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.4.2/nrf/getting_started/modifying.html#configure-application>)
-
+- [LMC660](https://www.ti.com/lit/ds/symlink/lmc660.pdf?ts=1790264881760&ref_url=https%253A%252F%252Fwww.ti.com)
+- [STMicroelectronics — STM32F411](https://www.st.com/en/microcontrollers-microprocessors/stm32f411/documentation.html)
 
