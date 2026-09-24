@@ -29,3 +29,8 @@ A Figura 2 apresenta o esquemático analógico desenvolvido no KiCad. O circuito
 | Resistores     |          15| Ganho, polarização e filtragem |
 | Capacitores    |          8 | Filtragem e remoção do offset  |
 | Conectores P2  |          2 | Entrada e saída de áudio       |
+
+## Referências (links/datasheets/livros)
+
+- [LMC660](https://www.ti.com/lit/ds/symlink/lmc660.pdf?ts=1790264881760&ref_url=https%253A%252F%252Fwww.ti.com)
+- [STMicroelectronics — STM32F411](https://www.st.com/en/microcontrollers-microprocessors/stm32f411/documentation.html)
