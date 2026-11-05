@@ -73,6 +73,28 @@ individualmente cada banda ou destacavam graves, médios e agudos. Além
 do ruído branco, músicas foram utilizadas para avaliar auditivamente os
 ajustes.
 
+### Firmware
+
+O firmware foi desenvolvido em C para o STM32F411, com os periféricos
+configurados no STM32CubeMX [1] e a execução gerenciada pelo FreeRTOS
+[2]. O código é dividido em módulos de processamento da FFT, que utiliza
+a biblioteca CMSIS-DSP [3], e de controle do display ST7735, coordenados
+pelo arquivo principal. A estrutura geral segue o diagrama de blocos
+da [Etapa 2](../etapa_2/README.md).
+
+O ADC adquire o sinal a 48 kHz, com transferência por DMA para um buffer
+de 1024 amostras, o que resulta em uma resolução de 46,875 Hz por bin. A
+conversão só é reiniciada após o término da FFT, evitando que novas
+amostras sobrescrevam o buffer em uso. O fluxo
+é mostrado na Figura 7. Após a remoção do nível DC e a
+aplicação de uma janela de Hann, a FFT é calculada e os bins são
+agrupados em 40 bandas de espaçamento logarítmico, usando a maior
+magnitude de cada uma. Os valores são convertidos para decibéis em
+relação a uma referência fixa, validada na bancada, com piso de −60 dB,
+e exibidos com o display em modo paisagem (160x128 pixels).
+
+<img src="software/imagens/fluxo_firmware.jpeg" alt="Fluxo de aquisição e processamento do firmware" width="600">
+
 ## Testes
 
 A análise no Ocenaudio permitiu verificar as respostas dos três filtros.
@@ -81,10 +103,6 @@ aproximada de 20 dB por década, conforme esperado para os estágios
 implementados. As capturas dos espectros foram editadas para destacar os
 trechos analisados e apresentar a verificação matemática dessa
 inclinação.
-
-`<img src="caminho/para/medicoes_atenuacao_filtros.jpeg" alt="Medições da atenuação dos filtros" width="600">`{=html}
-*Figura 5 --- Verificação da atenuação aproximada de 20 dB por década
-nas três bandas.*
 
 <img src="hardware/imagens/baixa_validacao.jpg" alt="Verificação da atenuação das altas frequências" width="600">
 <img src="hardware/imagens/media_validacao.jpg" alt="Verificação da atenuação das altas e baixas frequências" width="600">
@@ -99,17 +117,21 @@ e aproximadamente 60 mA para o conjunto com microcontrolador e display.
 
 <img src="hardware/imagens/fonte_bancada.jpg" alt="Teste dos módulos com uma única fonte de 5 V" width="600">
 
-## Desenvolvimento
+Para validar o firmware e a integração analógico-digital, foi aplicado
+na entrada do equalizador um sinal senoidal com frequência variando de
+20 Hz a 20 kHz, gerado no Ocenaudio. No display, a barra de maior
+amplitude se deslocou continuamente da esquerda para a direita,
+percorrendo todo o espectro (Figura 8). O resultado confirmou a
+aquisição pelo ADC, o cálculo da FFT e o mapeamento das frequências para
+as barras, além do funcionamento conjunto dos módulos analógico e
+digital.
 
-Apresentar o desenvolvimento da etapa contendo detalhes de implementação (se houver) de hardware e software. Use fotos, diagramas, tabelas etc. Adicionar pesqusisas realizadas. Relacionar as fotos, diagramas, etc no texto. Todas as referências devem citadas no texto. 
+<img src="software/imagens/fft.gif" alt="Varredura de frequência de 20 Hz a 20 kHz no display" width="600">
 
-## Testes
+## Referências
 
-Descrição dos testes/validações realizadas. Use fotos, diagramas, tabelas, etc.
-
-## Referências (links/datasheets/livros)
-
-
-- [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.4.2/nrf/getting_started/modifying.html#configure-application>)
-
-
+- [1] [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)
+- [2] [FreeRTOS](https://www.freertos.org/)
+- [3] [CMSIS-DSP](https://arm-software.github.io/CMSIS-DSP/latest/)
+- [4] [ST7735](https://github.com/STMicroelectronics/stm32-st7735)
+- [5] [Ocenaudio](https://www.ocenaudio.com/)
