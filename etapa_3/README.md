@@ -1,12 +1,103 @@
-# Etapa 1
+# Etapa 3
 
-**(MÍNIMO DE 600 E MÁXIMO DE 1000 PALAVRAS no total do arquivo md.)**
+A Etapa 3 teve como objetivo implementar e validar o circuito analógico
+do equalizador, integrá-lo ao sistema digital e verificar o
+funcionamento conjunto. Os testes foram realizados em protoboard e
+abrangeram as respostas dos filtros, a qualidade do áudio, a aquisição
+pelo microcontrolador e a alimentação do sistema completo.
 
-A etapa 1 ...
+## Desenvolvimento
 
-**(Adicionar aqui UM parágrafo com visão geral da etapa. Resumo dos itens da planilha.)**
+### Implementação do circuito analógico
 
-**(Não adicione código em nenhum arquivo md. )**
+A montagem inicial utilizou amplificadores operacionais TL074,
+alimentados por uma fonte simétrica de ±12 V. Os filtros foram montados
+e avaliados individualmente, começando pela banda de altas frequências
+e, em seguida, incluindo as bandas médias e baixas. Posteriormente, os
+três estágios foram integrados ao circuito somador e aos respectivos
+potenciômetros, permitindo avaliar o comportamento individual e conjunto
+das bandas.
+
+<img src="hardware/imagens/circ_inicial.jpg" alt="Montagem inicial usando o TL074" width="600">
+
+Também foi implementada a conversão da entrada estéreo para mono,
+combinando os canais esquerdo e direito. A montagem inicial apresentava
+muitos fios e ruído perceptível no áudio. Para melhorar sua
+estabilidade, a protoboard foi reorganizada, reduzindo o comprimento das
+conexões e aproximando os componentes. Foram adicionados capacitores de
+desacoplamento à alimentação dos amplificadores operacionais, o que
+reduziu significativamente o ruído observado.
+
+<img src="hardware/imagens/remontagem.jpg" alt="Montagem reorganizada do circuito analógico" width="600">
+
+Em seguida, o circuito foi adaptado para alimentação simples de 5 V.
+Como o ADC do STM32 não admite tensões negativas, foi necessário
+estabelecer uma referência de 2 V nos estágios analógicos pertinentes.
+Essa tensão foi gerada por um divisor resistivo e estabilizada por um
+amplificador operacional como buffer, substituindo as referências de GND
+nos pontos necessários.
+
+A adaptação foi inicialmente verificada com alimentação simétrica e
+TL074. Depois, o TL074 foi substituído pelo LM324 para os testes com 5
+V. Apesar de o circuito funcionar, foi percebida uma redução subjetiva
+na definição do áudio e a presença de ruído. Após avaliar alternativas
+compatíveis com alimentação simples e encapsulamento DIP, foi escolhido
+o LMC660. A substituição foi feita na protoboard e proporcionou uma
+melhora perceptível na qualidade sonora, sem problemas adicionais
+durante os testes.
+
+### Integração analógico-digital
+
+A integração inicial manteve os módulos analógico e digital em
+protoboards separadas, conectados por um GND comum e pelo sinal de saída
+do equalizador à entrada ADC do STM32. O circuito analógico utilizava
+uma fonte externa, enquanto o módulo digital era alimentado pela USB do
+computador.
+
+<img src="hardware/imagens/analogico_digital.jpg" alt="Integração entre o circuito analógico e módulo digital" width="600">
+
+Nos ensaios, um notebook reproduzia ruído branco pelo Ocenaudio,
+enviando o sinal à entrada do equalizador. A saída era conectada à
+entrada de áudio de outro notebook, também executando o Ocenaudio, para
+visualizar o espectro processado. Simultaneamente, o STM32 adquiria o
+sinal pelo ADC, processava as amostras por FFT e apresentava o resultado
+no display ST7735.
+
+Inicialmente, a escala utilizada pelo firmware não era adequada aos
+níveis do sinal e impedia uma visualização satisfatória no display. Após
+seu ajuste, foi possível comparar o espectro apresentado pelo STM32 com
+o do Ocenaudio. Com os potenciômetros sem atenuação significativa, os
+espectros de entrada e saída observados no Ocenaudio eram praticamente
+coincidentes. Também foram testadas combinações que atenuavam
+individualmente cada banda ou destacavam graves, médios e agudos. Além
+do ruído branco, músicas foram utilizadas para avaliar auditivamente os
+ajustes.
+
+## Testes
+
+A análise no Ocenaudio permitiu verificar as respostas dos três filtros.
+Nas bandas de graves, médias e agudas foi observada uma atenuação
+aproximada de 20 dB por década, conforme esperado para os estágios
+implementados. As capturas dos espectros foram editadas para destacar os
+trechos analisados e apresentar a verificação matemática dessa
+inclinação.
+
+`<img src="caminho/para/medicoes_atenuacao_filtros.jpeg" alt="Medições da atenuação dos filtros" width="600">`{=html}
+*Figura 5 --- Verificação da atenuação aproximada de 20 dB por década
+nas três bandas.*
+
+<img src="hardware/imagens/baixa_validacao.jpg" alt="Verificação da atenuação das altas frequências" width="600">
+<img src="hardware/imagens/media_validacao.jpg" alt="Verificação da atenuação das altas e baixas frequências" width="600">
+<img src="hardware/imagens/alta_validacao.jpg" alt="Verificação da atenuação das baixas frequências" width="600">
+
+Por fim, foi testada a alimentação conjunta dos módulos. O pino de 5 V
+do módulo digital foi conectado à fonte do circuito analógico,
+permitindo desconectar o STM32 da USB. O sistema permaneceu ligado por
+aproximadamente uma hora e meia, sem falhas ou aquecimento anormal. O
+consumo foi estimado em menos de 10 mA para o circuito analógico isolado
+e aproximadamente 60 mA para o conjunto com microcontrolador e display.
+
+<img src="hardware/imagens/fonte_bancada.jpg" alt="Teste dos módulos com uma única fonte de 5 V" width="600">
 
 ## Desenvolvimento
 
