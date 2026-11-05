@@ -60,6 +60,7 @@ uma fonte externa, enquanto o módulo digital era alimentado pela USB do
 computador. O teste pode ser observado na Figura 3.
 
 <img src="hardware/imagens/analogico_digital.jpg" alt="Integração entre o circuito analógico e módulo digital" width="600">
+
 *Figura 3 —  Integração entre circuito analógico e módulo digital.*
 
 Nos ensaios, um notebook reproduzia ruído branco pelo Ocenaudio,
