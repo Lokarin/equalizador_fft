@@ -19,6 +19,7 @@ potenciômetros, permitindo avaliar o comportamento individual e conjunto
 das bandas. Como pode se observar na Figura 1.
 
 <img src="hardware/imagens/circ_inicial.jpg" alt="Montagem inicial usando o TL074" width="600">
+
 *Figura 1 —  Montagem inicial usando o TL074.*
 
 Também foi implementada a conversão da entrada estéreo para mono,
@@ -31,6 +32,7 @@ reduziu significativamente o ruído observado. A remontagem pode ser
 vista na Figura 2.
 
 <img src="hardware/imagens/remontagem.jpg" alt="Montagem reorganizada do circuito analógico" width="600">
+
 *Figura 2 —  Montagem reorganizada do circuito analógico.*
 
 Em seguida, o circuito foi adaptado para alimentação simples de 5 V.
@@ -98,6 +100,7 @@ relação a uma referência fixa, validada na bancada, com piso de −60 dB,
 e exibidos com o display em modo paisagem (160x128 pixels).
 
 <img src="software/imagens/fluxo_firmware.jpeg" alt="Fluxo de aquisição e processamento do firmware" width="600">
+
 *Figura 4 —  Fluxo da aquisição e processamento do firmware.*
 
 ## Testes
@@ -110,11 +113,17 @@ trechos analisados e apresentar a verificação matemática dessa
 inclinação. Os resultados podem ser observados nas Figuras 5, 6 e 7. 
 
 <img src="hardware/imagens/baixa_validacao.jpg" alt="Verificação da atenuação das altas frequências" width="600">
+
 *Figura 5 —  Verificação da atenuação das altas frequências.*
+
 <img src="hardware/imagens/media_validacao.jpg" alt="Verificação da atenuação das altas e baixas frequências" width="600">
+
 *Figura 6 —  Verificação da atenuação das altas e baixas frequências.*
+
 <img src="hardware/imagens/alta_validacao.jpg" alt="Verificação da atenuação das baixas frequências" width="600">
+
 *Figura 7 —  Verificação da atenuação das baixas frequências.*
+
 
 Por fim, foi testada a alimentação conjunta dos módulos. O pino de 5 V
 do módulo digital foi conectado à fonte do circuito analógico,
@@ -125,6 +134,7 @@ e aproximadamente 75 mA para o conjunto com microcontrolador e display.
 Esse teste em bancada pode ser notado na Figura 8.
 
 <img src="hardware/imagens/fonte_bancada.jpg" alt="Teste dos módulos com uma única fonte de 5 V" width="600">
+
 *Figura 8 —  Testes dos módulos com uma única fonte de 5 V.*
 
 Para validar o firmware e a integração analógico-digital, foi aplicado
@@ -137,6 +147,7 @@ as barras, além do funcionamento conjunto dos módulos analógico e
 digital.
 
 <img src="software/imagens/reduzido.gif" alt="Varredura de frequência de 20 Hz a 20 kHz no display" width="">
+
 *Figura 9 —  Varredura de frequência de 20 Hz a 20 kHz no display.*
 
 ## Referências
