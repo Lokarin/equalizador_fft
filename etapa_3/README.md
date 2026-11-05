@@ -16,9 +16,10 @@ e avaliados individualmente, começando pela banda de altas frequências
 e, em seguida, incluindo as bandas médias e baixas. Posteriormente, os
 três estágios foram integrados ao circuito somador e aos respectivos
 potenciômetros, permitindo avaliar o comportamento individual e conjunto
-das bandas.
+das bandas. Como pode se observar na Figura 1.
 
 <img src="hardware/imagens/circ_inicial.jpg" alt="Montagem inicial usando o TL074" width="600">
+*Figura 1 —  Montagem inicial usando o TL074.*
 
 Também foi implementada a conversão da entrada estéreo para mono,
 combinando os canais esquerdo e direito. A montagem inicial apresentava
@@ -26,9 +27,11 @@ muitos fios e ruído perceptível no áudio. Para melhorar sua
 estabilidade, a protoboard foi reorganizada, reduzindo o comprimento das
 conexões e aproximando os componentes. Foram adicionados capacitores de
 desacoplamento à alimentação dos amplificadores operacionais, o que
-reduziu significativamente o ruído observado.
+reduziu significativamente o ruído observado. A remontagem pode ser 
+vista na Figura 2.
 
 <img src="hardware/imagens/remontagem.jpg" alt="Montagem reorganizada do circuito analógico" width="600">
+*Figura 2 —  Montagem reorganizada do circuito analógico.*
 
 Em seguida, o circuito foi adaptado para alimentação simples de 5 V.
 Como o ADC do STM32 não admite tensões negativas, foi necessário
@@ -52,9 +55,10 @@ A integração inicial manteve os módulos analógico e digital em
 protoboards separadas, conectados por um GND comum e pelo sinal de saída
 do equalizador à entrada ADC do STM32. O circuito analógico utilizava
 uma fonte externa, enquanto o módulo digital era alimentado pela USB do
-computador.
+computador. O teste pode ser observado na Figura 3.
 
 <img src="hardware/imagens/analogico_digital.jpg" alt="Integração entre o circuito analógico e módulo digital" width="600">
+*Figura 3 —  Integração entre circuito analógico e módulo digital.*
 
 Nos ensaios, um notebook reproduzia ruído branco pelo Ocenaudio,
 enviando o sinal à entrada do equalizador. A saída era conectada à
@@ -86,7 +90,7 @@ O ADC adquire o sinal a 48 kHz, com transferência por DMA para um buffer
 de 1024 amostras, o que resulta em uma resolução de 46,875 Hz por bin. A
 conversão só é reiniciada após o término da FFT, evitando que novas
 amostras sobrescrevam o buffer em uso. O fluxo
-é mostrado na Figura 7. Após a remoção do nível DC e a
+é mostrado na Figura 4. Após a remoção do nível DC e a
 aplicação de uma janela de Hann, a FFT é calculada e os bins são
 agrupados em 40 bandas de espaçamento logarítmico, usando a maior
 magnitude de cada uma. Os valores são convertidos para decibéis em
@@ -94,6 +98,7 @@ relação a uma referência fixa, validada na bancada, com piso de −60 dB,
 e exibidos com o display em modo paisagem (160x128 pixels).
 
 <img src="software/imagens/fluxo_firmware.jpeg" alt="Fluxo de aquisição e processamento do firmware" width="600">
+*Figura 4 —  Fluxo da aquisição e processamento do firmware.*
 
 ## Testes
 
@@ -102,11 +107,14 @@ Nas bandas de graves, médias e agudas foi observada uma atenuação
 aproximada de 20 dB por década, conforme esperado para os estágios
 implementados. As capturas dos espectros foram editadas para destacar os
 trechos analisados e apresentar a verificação matemática dessa
-inclinação.
+inclinação. Os resultados podem ser observados nas Figuras 5, 6 e 7. 
 
 <img src="hardware/imagens/baixa_validacao.jpg" alt="Verificação da atenuação das altas frequências" width="600">
+*Figura 5 —  Verificação da atenuação das altas frequências.*
 <img src="hardware/imagens/media_validacao.jpg" alt="Verificação da atenuação das altas e baixas frequências" width="600">
+*Figura 6 —  Verificação da atenuação das altas e baixas frequências.*
 <img src="hardware/imagens/alta_validacao.jpg" alt="Verificação da atenuação das baixas frequências" width="600">
+*Figura 7 —  Verificação da atenuação das baixas frequências.*
 
 Por fim, foi testada a alimentação conjunta dos módulos. O pino de 5 V
 do módulo digital foi conectado à fonte do circuito analógico,
@@ -114,19 +122,22 @@ permitindo desconectar o STM32 da USB. O sistema permaneceu ligado por
 aproximadamente uma hora e meia, sem falhas ou aquecimento anormal. O
 consumo foi estimado em menos de 10 mA para o circuito analógico isolado
 e aproximadamente 75 mA para o conjunto com microcontrolador e display.
+Esse teste em bancada pode ser notado na Figura 8.
 
 <img src="hardware/imagens/fonte_bancada.jpg" alt="Teste dos módulos com uma única fonte de 5 V" width="600">
+*Figura 8 —  Testes dos módulos com uma única fonte de 5 V.*
 
 Para validar o firmware e a integração analógico-digital, foi aplicado
 na entrada do equalizador um sinal senoidal com frequência variando de
 20 Hz a 20 kHz, gerado no Ocenaudio. No display, a barra de maior
 amplitude se deslocou continuamente da esquerda para a direita,
-percorrendo todo o espectro (Figura 8). O resultado confirmou a
+percorrendo todo o espectro (Figura 9). O resultado confirmou a
 aquisição pelo ADC, o cálculo da FFT e o mapeamento das frequências para
 as barras, além do funcionamento conjunto dos módulos analógico e
 digital.
 
 <img src="software/imagens/reduzido.gif" alt="Varredura de frequência de 20 Hz a 20 kHz no display" width="">
+*Figura 9 —  Varredura de frequência de 20 Hz a 20 kHz no display.*
 
 ## Referências
 
