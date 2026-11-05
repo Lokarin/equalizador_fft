@@ -63,7 +63,7 @@ computador. O teste pode ser observado na Figura 3.
 
 *Figura 3 —  Integração entre circuito analógico e módulo digital.*
 
-Nos ensaios, um notebook reproduzia ruído branco pelo Ocenaudio,
+Nos ensaios, um notebook reproduzia ruído branco pelo Ocenaudio [5],
 enviando o sinal à entrada do equalizador. A saída era conectada à
 entrada de áudio de outro notebook, também executando o Ocenaudio, para
 visualizar o espectro processado. Simultaneamente, o STM32 adquiria o
@@ -85,7 +85,7 @@ ajustes.
 O firmware foi desenvolvido em C para o STM32F411, com os periféricos
 configurados no STM32CubeMX [1] e a execução gerenciada pelo FreeRTOS
 [2]. O código é dividido em módulos de processamento da FFT, que utiliza
-a biblioteca CMSIS-DSP [3], e de controle do display ST7735, coordenados
+a biblioteca CMSIS-DSP [3], e de controle do display ST7735 [4], coordenados
 pelo arquivo principal. A estrutura geral segue o diagrama de blocos
 da [Etapa 2](../etapa_2/README.md).
 
