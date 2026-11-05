@@ -113,7 +113,7 @@ do módulo digital foi conectado à fonte do circuito analógico,
 permitindo desconectar o STM32 da USB. O sistema permaneceu ligado por
 aproximadamente uma hora e meia, sem falhas ou aquecimento anormal. O
 consumo foi estimado em menos de 10 mA para o circuito analógico isolado
-e aproximadamente 60 mA para o conjunto com microcontrolador e display.
+e aproximadamente 75 mA para o conjunto com microcontrolador e display.
 
 <img src="hardware/imagens/fonte_bancada.jpg" alt="Teste dos módulos com uma única fonte de 5 V" width="600">
 
@@ -126,7 +126,7 @@ aquisição pelo ADC, o cálculo da FFT e o mapeamento das frequências para
 as barras, além do funcionamento conjunto dos módulos analógico e
 digital.
 
-<img src="software/imagens/fft.gif" alt="Varredura de frequência de 20 Hz a 20 kHz no display" width="600">
+<img src="software/imagens/reduzido.gif" alt="Varredura de frequência de 20 Hz a 20 kHz no display" width="">
 
 ## Referências
 
