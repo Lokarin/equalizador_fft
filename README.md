@@ -4,7 +4,7 @@ Este projeto consiste no desenvolvimento de um **equalizador de áudio analógic
 
 * [Etapa 1](./etapa_1/README.md) (10/09): Pesquisa, planejamento e definição do projeto. 
 * [Etapa 2](./etapa_2/README.md) (01/10): Desenvolvimento e testes dos circuitos. 
-* [Etapa 3](./etapa_3/README.md) (data da entrega): Integração do equalizador com o sistema de visualização. [TODO]
+* [Etapa 3](./etapa_3/README.md) (05/11): Integração do equalizador com o sistema de visualização.
 * [Etapa 4](./etapa_4/README.md) (data da entrega): Finalização, testes e análise do projeto. [TODO]
 
 ## Requisitos
